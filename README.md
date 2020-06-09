@@ -1,2 +1,2 @@
 # circulant-Ramsey
-Generator for circulant Ramsey graphs
+Generator for circulant Ramsey graphs.

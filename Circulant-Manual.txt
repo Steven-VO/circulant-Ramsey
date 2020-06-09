@@ -1,0 +1,76 @@
+genCyc: generator for circulant Ramsey graphs
+
+ COMPILATION:
+-------------
+
+Tested only for Linux with GNU-compiler.
+It is possible that this program does not work properly on 32-bit machines.
+Also, the option to process words of size 128 might not be possible on all architectures.
+
+Compile with the 'make'-command.
+- 'make circulant' for default options.
+- 'make largeCirculant' for graphs up to 128 vertices.
+- 'make allCirculant' to generate all circulant graphs.
+
+Other compile parameters and combinations can be chosen manually:
+
+ -DSETZISE=64 or 128 (default=64)
+       Maximum order of the graphs. Choosing 128 runs slower.
+
+ -DNULCOUNTS=n (default=4)
+       Number of consecutive zero-results after which the algorithms stops.
+
+ -DSEARCH_SINGLE=n (default=1)
+       If 1, search for current graph order stops after finding 1 graph.
+       Setting to 0 will finds all graphs.
+       
+ -DCHECK_GRAPHS (default 1)
+       If 1, verifies correctness of the code by testing all output-graphs for 
+       severe errors (based on the clique number). Turning off might increase
+       speed, especially when generating all graphs.
+
+Modulo parameters split the work into roughly equal parts:
+ -DMODULO_SPLIT=n (default=1)
+       If >1, will only try 1/n-th of the graphs.
+ -DMODULO=k  (default=0)
+       Modulo class to be generated.
+ -DSPLIT_DEPTH (default=6)
+       Recursion depth at which the modulo splitting starts.
+
+
+ CALLING THE PROGRAM:
+----------------------
+
+./genCyc <n> <avoid-parameters> [-p]
+
+  n: starting graph order
+
+  -p: print distance sets of the found circulant Ramsey graphs
+
+  avoid-parameters: Space-separated sequence of graphs to avoid. The number of 
+                    graphs passed is automatically the number of colors used.
+     *<n>: Complete graph K_n
+     *J<n>: Complete graph with one edge dropped = J_n=K_n-e
+     *W<n>: Wheel on n vertices
+     *C<n>: Cycle of length n
+     *F<n>: Complete graph missing 2 disjoint edges (Kn-2e) (Might be slow)
+
+Make sure that if the same graph is avoided multiple times, they are all passed
+consecutively to avoid color permutations.
+
+
+ EXAMPLES
+-----------
+
+./genCyc 20 4 J5 -p
+Computes circulant graphs starting from 20 vertices, avoiding K4 in the first color
+ and J5 in the second, and prints the results.
+
+./genCyc 35 W5 3 C6
+Computes 3-colored graphs with no K3 in the first color, no wheel of size 5 in the
+ second and no cycle of length 6 in the third.
+
+./genCyc 20 3 3 4
+Computes 3-colored graphs with no K3 in the first and second color, no K4 in the third.
+Notice that "./genCyc 20 3 4 3" will give a double amount of graphs since color-permutations
+will be ignored.
