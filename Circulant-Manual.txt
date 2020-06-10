@@ -1,4 +1,8 @@
 genCyc: generator for circulant Ramsey graphs
+----------------------------------------------
+
+Author: Steven Van Overberghe
+
 
  COMPILATION:
 -------------
@@ -62,15 +66,18 @@ consecutively to avoid color permutations.
  EXAMPLES
 -----------
 
-./genCyc 20 4 J5 -p
-Computes circulant graphs starting from 20 vertices, avoiding K4 in the first color
+./genCyc 30 6 J5 -p
+Computes circulant graphs starting from 20 vertices, avoiding K6 in the first color
  and J5 in the second, and prints the results.
 
-./genCyc 35 W5 3 C6
-Computes 3-colored graphs with no K3 in the first color, no wheel of size 5 in the
- second and no cycle of length 6 in the third.
+./genCyc 44 5 W5 C8
+Computes 3-colored graphs with no K5 in the first color, no wheel of size 5 in the
+ second and no cycle of length 8 in the third.
 
 ./genCyc 20 3 3 4
 Computes 3-colored graphs with no K3 in the first and second color, no K4 in the third.
 Notice that "./genCyc 20 3 4 3" will give a double amount of graphs since color-permutations
 will be ignored.
+
+
+If you used this progam to find new lower bounds, I would be interested to hear.
