@@ -1,5 +1,8 @@
-genCyc: generator for circulant Ramsey graphs
+genBlock: generator for block-circulant Ramsey graphs
 ----------------------------------------------
+
+This program generates block-circulant Ramsey graphs. These are graphs which are the disjoint union of equally-sized circulant graphs, connected to each other in circulant fashion.
+It is designed to do full enumeration with few isomorphic copies.
 
 Author: Steven Van Overberghe
 
@@ -12,16 +15,16 @@ It is possible that this program does not work properly on 32-bit machines.
 Also, the option to process words of size 128 might not be possible on all architectures.
 
 Compile with the 'make'-command.
-- 'make circulant' for default options.
-- 'make largeCirculant' for graphs up to 128 vertices.
-- 'make allCirculant' to generate all circulant graphs.
+- 'make block' for default options.
+- 'make largeBlock' for graphs up to 128 vertices.
+- 'make allBlock' to generate all circulant graphs.
 
 Other compile parameters and combinations can be chosen manually:
 
  -DSETZISE=64 or 128 (default=64)
        Maximum order of the graphs. Choosing 128 runs slower.
 
- -DNULCOUNTS=n (default=4)
+ -DNULCOUNTS=n (default=3)
        Number of consecutive zero-results after which the algorithms stops.
 
  -DSEARCH_SINGLE=n (default=1)
@@ -45,11 +48,11 @@ Modulo parameters split the work into roughly equal parts:
  CALLING THE PROGRAM:
 ----------------------
 
-./genCyc <n> <avoid-parameters> [-p]
+./genBlock <n> <k> <avoid-parameters>
 
   n: starting graph order
 
-  -p: print distance sets of the found circulant Ramsey graphs
+  k: number of blocks. Search is ignored if n is not a multiple of k.
 
   avoid-parameters: Space-separated sequence of graphs to avoid. The number of 
                     graphs passed is automatically the number of colors used.
@@ -59,25 +62,19 @@ Modulo parameters split the work into roughly equal parts:
      *C<n>: Cycle of length n
      *F<n>: Complete graph missing 2 disjoint edges (Kn-2e) (Might be slow)
 
-Make sure that if the same graph is avoided multiple times, they are all passed
-consecutively to avoid color permutations.
 
 
  EXAMPLES
 -----------
 
-./genCyc 30 6 J5 -p
-Computes circulant graphs starting from 30 vertices, avoiding K6 in the first color
- and J5 in the second, and prints the results.
+./genBlock 36 4 J5 J6
+Generates block-circulant graphs with 4 equally-sized blocks, starting from 36 vertices, avoiding J5 in the first color and J6 in the second. This should find the unique such graph in about 1 second.
 
-./genCyc 44 5 W5 C8
-Computes 3-colored graphs with no K5 in the first color, no wheel of size 5 in the
- second and no cycle of length 8 in the third.
+./genBlock 28 4 J4 4 C4
+Computes 3-colored graphs, every colour being a block-circulant graph on 4 blocks. There will be no J4 in the first color, no 4-clique in the second and no cycle of length 4 in the third.
 
-./genCyc 20 3 3 4
-Computes 3-colored graphs with no K3 in the first and second color, no K4 in the third.
-Notice that "./genCyc 20 3 4 3" will give a double amount of graphs since color-permutations
-will be ignored.
+./genBlock 30 1 4 6
+Computes 2-coloured block-circulant graphs with one block, i.e. a circulant graph. The output is equivalent to ./genCyc 30 4 6, but will be somewhat slower.
 
 
 If you used this progam to find new lower bounds, I would be interested to hear.
