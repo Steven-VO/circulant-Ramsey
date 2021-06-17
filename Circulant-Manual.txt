@@ -25,7 +25,7 @@ Other compile parameters and combinations can be chosen manually:
        Number of consecutive zero-results after which the algorithms stops.
 
  -DSEARCH_SINGLE=n (default=1)
-       If 1, search for current graph order stops after finding 1 graph.
+       If 1, the search for the current graph order stops after finding 1 graph.
        Setting to 0 will finds all graphs.
        
  -DCHECK_GRAPHS (default 1)
@@ -45,11 +45,12 @@ Modulo parameters split the work into roughly equal parts:
  CALLING THE PROGRAM:
 ----------------------
 
-./genCyc <n> <avoid-parameters> [-p]
+./genCyc <n> <avoid-parameters> [-p | -g]
 
   n: starting graph order
 
   -p: print distance sets of the found circulant Ramsey graphs
+  -g: print the Ramsey graphs in graph6-format.
 
   avoid-parameters: Space-separated sequence of graphs to avoid. The number of 
                     graphs passed is automatically the number of colors used.
@@ -58,6 +59,7 @@ Modulo parameters split the work into roughly equal parts:
      *W<n>: Wheel on n vertices
      *C<n>: Cycle of length n
      *F<n>: Complete graph missing 2 disjoint edges (Kn-2e) (Might be slow)
+     *B<n1><n2> Complete bipartite graph on n_1 and n_2 vertices. n1 can be one digit only.
 
 Make sure that if the same graph is avoided multiple times, they are all passed
 consecutively to avoid color permutations.
@@ -73,6 +75,10 @@ Computes circulant graphs starting from 30 vertices, avoiding K6 in the first co
 ./genCyc 44 5 W5 C8
 Computes 3-colored graphs with no K5 in the first color, no wheel of size 5 in the
  second and no cycle of length 8 in the third.
+
+./genCyc 15 B34 B210 -g
+Computes circulant graphs avoiding the complete bipartite graph K_{3,4} in the first color
+ and K_{2,10} in the second, and prints the results in graph6 format.
 
 ./genCyc 20 3 3 4
 Computes 3-colored graphs with no K3 in the first and second color, no K4 in the third.

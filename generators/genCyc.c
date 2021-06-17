@@ -5,7 +5,7 @@
  * 
  * ---------------------------------
  * 
- * Copyright (c) 2020
+ * Copyright (c) 2021
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,6 +33,7 @@
 
 #ifndef GEN_CYC
 #define GEN_CYC
+#include "writeGraphs.c"
 
 //Search for one Ramsey graph vs generate all
 #ifndef SEARCH_SINGLE
@@ -148,6 +149,57 @@ int checkCycleInSet(Set searchset, int color, int length){
     return 0;
 }
 
+int biPar[5][2] = {{0,0},{0,0}};
+
+int searchBipartiteClass(Set possibleAdd, Set remaining, int size2, int size2Left, int desiredSize1, int desiredSize2, int color){
+    int size1;
+    if(size2>=desiredSize2){
+        size1 = POPCOUNT(remaining);
+        if(size1<desiredSize1){
+            return 0;
+        }else{
+            return 1;
+        }
+    }
+
+    //to avoid a popcount
+    if(desiredSize1!=1 && remaining==S1){
+        return 0;
+    }
+    size1 = POPCOUNT(remaining);
+    if(size1<desiredSize1){
+        return 0;
+    }
+
+    Set nextRemaining = remaining;
+    int y;
+    ITERATE_SET(possibleAdd, y)
+        size2Left--;
+        if(size2+1+size2Left<desiredSize2){
+            return 0;
+        }
+        nextRemaining = remaining & ADJ(y,color);
+        if (searchBipartiteClass(possibleAdd,nextRemaining,size2+1,size2Left,desiredSize1,desiredSize2,color)==1){
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
+
+int checkBipartite(int x, int color, int size1, int size2){
+    Set neighX = ADJ(x,color);
+    int setsize2 = POPCOUNT(distances[color]);
+
+    int result1 = searchBipartiteClass(WITHOUT(distances[color],x),neighX,1,setsize2-1,size1,size2,color);
+
+    if(size1!=size2){
+        int result2 = searchBipartiteClass(WITHOUT(distances[color],x),neighX,1,setsize2-1,size2,size1,color);
+        return (result1 || result2);
+    }
+    return result1;
+}
 
 //check if G contains a clique with one edge short
 int checkKmE(Set searchSet, int color, int size){
@@ -258,6 +310,16 @@ Graph* fillCircularGraph(Set N_v0, int n){
     return g;
 }
 
+
+void printG6(){
+    for (int i = 0; i < colorCount - 1; i++)
+    {
+        Graph* g = fillCircularGraph(distances[i],n);
+        writeG6(*g);
+        freeGraph(g);
+    }
+}
+
 int trueSize(int color){
     return (avoidSize[color]) % MAX_CLIQUE;
 }
@@ -281,6 +343,9 @@ void try_distance(short x, Set used){
     if(x==m+1){
         if(DoPrintCirc){
             printCirculants(distances,colorCount);
+        }
+        if(DoPrintG6){
+            printG6();
         }
         if(CHECK_GRAPHS){
             checkRamsey(colorCount,n);
@@ -319,8 +384,11 @@ void try_distance(short x, Set used){
             Set oldRestrictions = restrictions[i];
             
 
-
-            if(avoidSize[i] > 4 * MAX_CLIQUE){
+            if(avoidSize[i] > 5 * MAX_CLIQUE){
+                if(checkBipartite(x,i,biPar[i][0],biPar[i][1])==0){
+                    try_distance(nextX, WITH(used, x));
+                }
+            }else if(avoidSize[i] > 4 * MAX_CLIQUE){
                 if(checkCycleInSet(ADJ(0,i),i,avoidSize[i] - 4 * MAX_CLIQUE -1)==0){
                     try_distance(nextX, WITH(used, x));
                 }
@@ -446,6 +514,18 @@ int main(int argc, char const *argv[])
         case 'W':
         {
             avoidSize[i] = ((int) strtol(&argv[j][1], NULL, 10)) + 4 * MAX_CLIQUE;
+            i++;
+            break;
+        }
+        case 'B':
+        {
+            //ugly
+            int avoid1 = ((int) strtol(&argv[j][1], NULL, 10));
+            int avoid2 = ((int) strtol(&argv[j][2], NULL, 10));
+            avoid1 = avoid2<10?(avoid1-avoid2)/10:(avoid1-avoid2)/100;
+            biPar[i][0] = avoid1;
+            biPar[i][1] = avoid2;
+            avoidSize[i] = avoid1+avoid2 + 5 * MAX_CLIQUE;
             i++;
             break;
         }

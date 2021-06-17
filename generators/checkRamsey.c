@@ -8,7 +8,7 @@
 
 typedef struct Graph{
     int n; //number of vertices
-    Set* adj;  //adjacancy sets
+    Set* adj;  //adjacency sets
 } Graph;
 
 
@@ -59,7 +59,7 @@ Graph complGraph(Graph graph){
     return complement;
 }
 
-//no mallocs
+
 void complInplace(Graph graph){
     int n = graph.n;
 

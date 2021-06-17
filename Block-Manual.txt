@@ -39,11 +39,9 @@ Other compile parameters and combinations can be chosen manually:
 
 Modulo parameters split the work into roughly equal parts:
  -DMODULO_SPLIT=n (default=1)
-       If >1, will only try 1/n-th of the graphs.
+       If >1, will only try 1/n-th of the branches.
  -DMODULO=k  (default=0)
        Modulo class to be generated.
- -DSPLIT_DEPTH (default=6)
-       Recursion depth at which the modulo splitting starts.
 
 
  CALLING THE PROGRAM:
@@ -62,7 +60,7 @@ Modulo parameters split the work into roughly equal parts:
      *W<n>: Wheel on n vertices
      *C<n>: Cycle of length n
      *F<n>: Complete graph missing 2 disjoint edges (Kn-2e) (Might be slow)
-
+     *B<n1><n2> Complete bipartite graph on n_1 and n_2 vertices. n1 can be one digit only.
 
 
  EXAMPLES
@@ -70,7 +68,7 @@ Modulo parameters split the work into roughly equal parts:
 
 ./genBlock 36 4 J5 J6
 Generates block-circulant graphs with 4 equally-sized blocks, starting from 36 vertices, avoiding J5 in the first color
-and J6 in the second. This should find the unique such graph in about 1 second.
+and J6 in the second. This should find the unique such graph in about 0.1 second.
 
 ./genBlock 28 4 J4 4 C4
 Computes 3-colored graphs, every colour being a block-circulant graph on 4 blocks. There will be no J4 in the first color,
