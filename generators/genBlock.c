@@ -295,6 +295,24 @@ int checkBipartite(int x, int color, int size1, int size2, int column, int row){
     return result1;
 }
 
+
+//-------------------------------------------
+
+Set* tempList;
+void sort(Set* list, int length){
+    for (int i = 1; i < length; i++){
+        for (int j = i-1; j >= 0 ; j--){
+            if(list[j] > list[j+1] ){
+                Set temp = list[j];
+                list[j] = list[j+1];
+                list[j+1] = temp;
+            }else{
+                continue;
+            }
+        }
+    }
+}
+
 //-------------------------------------------
 
 int unitsNr;
@@ -357,31 +375,6 @@ int isMultRepresentative0(Set s, Set base){
     return 1;
 }
 
-//Check if s can be made smaller than base by multiplication
-//Or smaller than the previous with inherited auts
-int isMultRepresentative(Set s, int keepTrackIndex){
-    for (int index = 0; index < unitsNr; index++)
-    {
-        int toMult = units[index];
-        Set mult = multiplySet(s,toMult,blockSize);
-        if(mult < distances[0][0][0]){
-            return 0;
-        }
-        int blockIndex = 0;
-        while(blockIndex < keepTrackIndex && CONTAINS(fixUnits[blockIndex],index)){
-            if(mult < distances[0][blockIndex+1][blockIndex+1]){
-                //multiplication would give smaller sequence
-                return 0;
-            }else if(blockIndex == keepTrackIndex - 1 && mult == distances[0][blockIndex+1][blockIndex+1]){
-                //automorphisms to keep track of
-                ADD(fixUnits[keepTrackIndex],index);
-            }
-            blockIndex++;
-        }
-    }
-    return 1;
-}
-
 Set multRepresentativeSet(Set s){
     Set min = s;
     for (int index = 0; index < unitsNr; index++){
@@ -391,6 +384,32 @@ Set multRepresentativeSet(Set s){
         }
     }
     return min;
+}
+
+
+int compareLists(int length){
+    for (int i = 0; i < length; i++){
+        if(tempList[i] < distances[0][i][i]){
+            return -1;
+        }else if(tempList[i] > distances[0][i][i]){
+            return 1;
+        }
+    }
+    return 0;
+}
+
+int isFullMultRepresentative(int currentColumn){
+    for (int index = 0; index < unitsNr; index++){
+        for (int i = 0; i < currentColumn; i++){
+            tempList[i] = multiplySet(distances[0][i][i],units[index], m);
+        }
+        sort(tempList,currentColumn);
+        int comp = compareLists(currentColumn);
+        if(comp < 0){
+            return 0;
+        }
+    }
+    return 1;
 }
 
 
@@ -674,24 +693,20 @@ void try_distance(int x, int column, int row, char flipRemains){
     
     if(row == column && x==halfBlock+1 && column>0){
 
-        if(distances[0][column][column] == distances[0][column-1][column-1]){
-            //Don't do the same work twice
-            fixUnits[column] = fixUnits[column-1];
-        }else{
-            fixUnits[column] = S0;
-            if(isMultRepresentative(distances[0][column][column],column)==0){
-                return;
-            }
+        if(isFullMultRepresentative(column+1) == 0){
+            return;
             //TODO: remaining multiplicative automorphisms at the end, should be checked further.
             //This will not change the runtime, however.
-        }
-        
+        }  
     }
 
 
     if(MODULO_SPLIT != 1 && column==1 && row == 0 && x==blockSize){
        splitCount++;
-       if(splitCount%(MODULO_SPLIT)!=MODULO){
+       if(splitCount == MODULO_SPLIT){
+           splitCount = 0;
+       }
+       if(splitCount!=MODULO){
            return;
        }
     }
@@ -841,6 +856,7 @@ void searchRamsey(){
 
     calcUnits(blockSize);
     fixUnits = calloc(k,sizeof(Set));
+    tempList = calloc(k,sizeof(Set));
     
 
     count = 0;
@@ -869,6 +885,7 @@ void searchRamsey(){
 
     free(fixUnits);
     free(units);
+    free(tempList);
 }
 
 

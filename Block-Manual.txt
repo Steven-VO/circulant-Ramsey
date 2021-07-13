@@ -1,7 +1,7 @@
 genBlock: generator for block-circulant Ramsey graphs
-----------------------------------------------
+------------------------------------------------------
 
-This program generates block-circulant Ramsey graphs. These are graphs which are the disjoint union of
+This program generates block-circulant Ramsey graphs. These are graphs which are the union of
 equally-sized circulant graphs, connected to each other in circulant fashion.
 It is designed to do full enumeration with few isomorphic copies.
 
@@ -56,7 +56,7 @@ Modulo parameters split the work into roughly equal parts:
   avoid-parameters: Space-separated sequence of graphs to avoid. The number of 
                     graphs passed is automatically the number of colors used.
      *<n>: Complete graph K_n
-     *J<n>: Complete graph with one edge dropped = J_n=K_n-e
+     *J<n>: Complete graph with one edge dropped = J_n = K_n-e
      *W<n>: Wheel on n vertices
      *C<n>: Cycle of length n
      *F<n>: Complete graph missing 2 disjoint edges (Kn-2e) (Might be slow)

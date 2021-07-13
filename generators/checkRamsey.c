@@ -31,7 +31,6 @@ int adjacent(Graph* g, int i, int j){
 #define ADJACENT(g,i,j) (CONTAINS(g->adj[i],j))
 
 
-//returns new malloced complementary graph
 Graph* dualGraph(Graph* graph){
     Graph* g = malloc(sizeof(Graph));
     int n = graph->n;
