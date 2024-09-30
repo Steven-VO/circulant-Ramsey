@@ -1,0 +1,55 @@
+R(B3,B3) > 12
+KQhTMdhLkqht
+
+R(B4,B4) > 16
+OCrb`qhtJTejebRPssYfb
+
+R(B5,B5) > 20
+SCpdepkLdSyhYjLTrSYYrhhLRQ\RQYhxK
+
+R(B6,B6) > 24
+WCpdaqktbUEkiXtKlRXiZehNLQZLQXelMXhRRLI\KshiXxR
+
+R(B7,B7) > 28
+[?bFBawvF[MwMwF[TLMhhYektL{tKyYe]ehFstGzRSbeehFee`FRRWbssuGyefpF
+
+R(B8,B8) > 32
+_?bBDbWzBkVWvWZkEz?vWdiNJS^JSZdi[xYfFJS{[lRgxYfgxWfS[kRtFJC}gxGfYbca]tFHCytFXCxYb{a[
+
+R(B9,B9) > 36
+c?`DEbg\DsZgzg\sV\AzgJm_V\CkY]ULNdbR[kYxqpjrdbVRdbVhqpJy[kAzRd_VLMU@[Y[kA{Y[gA}LMS@\bRd?VkY[gAyphu_JdbR|?V
+
+R(B10,B10) > 40
+g?AEFBo}BwVovozw]}Fvo^^?}}?}}?^^AYeTrSqjLRJuYeVUYe^jLRFirSpxUYeNdXiO~IrS@zIrT@xdXi_}XUYGNRIrP@|KjKCFiXUWGNiXUWGNtKjKCFlRIv@@xiXVwGN
+
+R(B11,B11) > 44
+k?AEFBo]DwZozo\wV]EzoznBv]Bv]@zn?]zoBv]DRYHyesRyesR\RYJfSub{yesNRiZO{fSu`wfSu`{RiZO|CyesNgfSs`}a\RAFlCyfCNlCydCNua\OaFlgfSG`xlCy`CNesRiCO|Lgf[G`|Lgf[G`yesR}CO{
+
+R(B12,B12) > 48
+o?AEBAouFW]o]onWZuF]o|z@zuDzuE|z@n]oLzu?vnW@n]ohsYJsyLD|MbPZhsYNmfPg|\MbPx\MbPwmfPk}JhsXNP\MbH|DsyGfyJhs@NYJhs`NLDsyOfbP\McH{YJho`NPgmfAC}bP\MCH}bP\ICH~Pgm`AC|sYJiO`NMbP\qCH{yLDvGOfhsYJ}O`N
+
+R(B13,B13) > 52
+s?AEBAouFWMomoVWTuAmoizBTuFTuBizAymovTuB\VWEymoEymoB\VWQt`k]UkLbxYouLqt`kxqt`lwxYou}MUkLNpqt`hzFJUEfuMUkHNuMUk@NZFJUGfepqtaHwuMUlPNBWxYtC}EpqtiH}EpqsiHzBWxYTC}ouMUDPNUEpqwiH|WZFIagfyouMPDPNYouMXDPNlWZFKagfjUEpvGiHxYouNxDPN
+
+R(B14,B14) > 56
+w?AADBOyFgNONOfgXyFNO[|?xyCxyE[|BfNO{xyBrfgVfNOVfNOJrfgA{xy?VfNOcuTYNHkis^HkisZcuTY[xLdUnFHkit{[eqjVgxLdUngxLdSns[eqgVlFHkiD|gxLdOnUbcuVA}lFHkeDylFHkeD|UbcuBA|TgxLgonIlFHnED{is[ekWVxTgxKWonXTgxKWonkis[cKWVzIlFHBEDzXTgxGWonLdUbe`bA}ZIlFLBEDyZIlF\BEDxLdUb}`bA{
+
+R(B15,B15) > 60
+{??CEB_{BoV_v_zoM{Dv_V]Am{Em{FV]@tv_mm{Eyzo\tv_|tv_]yzoFmm{?|tv_BvV]?Fmm{CZSZDmLiLatbYbWnkZSZD}plPkVlbYbW~lbYbW^UplPkNdkZSZBwlbYbW^auLiL`~DkZSXBzDkZSXB|auLiG`~WlbYaG^ZDkZSPBxkUplTCNbWlbYiG^bWlbYIG^PkUplDCNsZDkZPPBybWlbYIG^iLauLGg`~SZDkWPPBzSZDkWPPB|iLauKGg`~YbWlbAIG^ZSZDkwPPBxlPkUv`DCNbYbWl~AIG^
+
+R(B16,B16) > 64
+~?@???CE@_kEo\_|_}oNkD|_VuAnkAnkDVuBT|_ynkFi}o^T|_^T|_ni}oZynkB^T|_L|Vu?Zynk?Zynk?L|VuAFQtKroyUhe^BhYeXmFQtKvMFQtK~fBhYe^xoyUhbzMFQtK^Kw\JSx}XoyUhR}XoyUgRzKw\JSH{rMFQtA^eXoyU_RyXfBhZ@NsrMFQqA^SrMFQyA^iXfBhT@NyeXoyTORzSrMFQiA^lRKw\AgH|YeXoyDORxYeXoyDOR{lRKw[AgH|JSrMF_iA^hYeXosDOR}diXfAOT@N|JSrMC_iA^\JSrMK_iA^MdiXfMOT@NbhYeXvcDORw\JSrN{_iA^
+
+R(B17,B17) > 68
+~?@C??CE@_kEo\_|_]oVkA|_juBVkFVkBjuAy|_VVkD\]oYy|_yy|_|\]oNVVkDyy|_vjju@nVVk@nVVk?vjju?Lyy|_@nVVkDeBiUpzKFSlbzKFSlb\eBiUrfX_ydlwzKFSl~bko\Qt~FX_ydbzFX_ydr|bko\Qh~WzKFSa^ZFX_ycR|k\eBi@NjWzKFTA^JWzKFTA^dk\eBi`NhZFX_ygR|JWzKFDA^Slbko[SH}hZFX_wgR}hZFX_ggR~SlbkoSSH|tJWzKDDA^MhZFX_ggRwydk\eAa`N`tJWzKDDA^@tJWzMDDA^_ydk\dAa`NwMhZFWOggRz@tJWzQDDA^KFSlbnGSSH}WMhZF]OggR}WMhZF]OggRzKFSlb~GSSH{
+
+R(B18,B18) > 72
+~?@G??CAA_sFO]_]_nOZsF]_|y@zsDzsA|yAn]_tzsFVnO]n]_]n]_nVnOZtzsF]n]_|y|y@ztzsDztzsA|y|y?n]n]_Dztzs?VnVnO?n]n]_keRfSFuRHriB|cq[y_~keRfSF]qXM\O{|cq[ybw|cq[ybw]qXM\T{FkeRfT^_|cq[yJyBuRHrgnsFkeRf@^SFkeRf`^iBuRHrOny_|cq[cJ~SFkeR_`^\O]qXMAD{y_|cq]CJ{y_|cqYCJ}\O]qXLAD~fSFkePO`^[y_|cqICJxriBuRGgOnrfSFke@O`^RfSFke`O`^HriBuROgOnq[y_|ccICJ}RfSFk_`O`^XM\O]qADAD{q[y_|eCICJ{q[y_|aCICJyXM\O]tADAD{eRfSFnO`O`^cq[y_|yCICJ}RHriBvgOgOnkeRfSF~O`O`^
+
+R(B19,B19) > 76
+~?@K??CAA_sFOM_m_vOLsDm_UyAlsElsFUyBtm_}lsByvOVtm_Vtm_jyvOY}lsBVtm_l^UyBY}lsFY}lsBl^UyAzVtm_VY}ls@\jyvOAzVtm_AzVtm_@\jyvOOxI\eF]FHRkozw[dMrBloxI\eF|oxI\eF}w[dMrB~mFHRko^\oxI\eJxvBchuWnbmFHRkp^BmFHRkp^`vBchuWnw\oxI\aJzBmFHRkP^KMw[dMxD}W\oxI\QJ}W\oxI\QJzKMw[dMhD}rBmFHRIP^uW\oxIPQJ~X`vBcgDGnmrBmFHOIP^MrBmFHWIP^fX`vBccDGnhuW\oxL@QJ|MrBmFGgIP^SzKMw[a_hD{huW\oxd@QJ{huW\owd@QJySzKMw[Q_hD{dMrBmFCgIP^chuW\owd@QJ}QfX`vAaSDGn{dMrBmDCgIP^[dMrBmLCgIP^MQfX`vMaSDGnbchuW\vgd@QJw[dMrBn|CgIP^
+
+R(B20,B20) > 80
+~?@O???CB?wF_N?n?v_\wBn?m{@\wD\wEm{@jn?l\wEtv_Ljn?ljn?Utv_Tl\wEljn?yum{@tl\wDtl\wEyum{Bmljn?|tl\wBvUtv_Fmljn?Fmljn?BvUtv_?|tl\w?Fmljn?ebZBkTNLEuFWi^LEuFWiZebZBkT[xguozD^fLEuFWjy[sZW\a~sxguozC~SxguozC~i[sZW\_^ifLEuFWFxSxguozO~DRebZBlB}IfLEuFQF}IfLEuFAFzDRebZBpB}pSxguosO~uIfLEuEaF~Wi[sZWIG^mpSxguoSO~MpSxguqSO~FWi[sZXIG^`uIfLEuQaF{MpSxguqSO~ozDRebXHPB|`uIfLEyQaF|`uIfLEiQaF}ozDRebDHPB|kMpSxgpQSO~l`uIfLEIQaF}uFWi[sGhIG^lkMpSxgPQSO~LkMpSxgPQSO~EuFWi[sGhIG^pl`uIfLAIQaFyLkMpSxwPQSO~guozDRf`DHPB~Pl`uIfNAIQaFzPl`uIf^AIQaFxguozDR~`DHPB{
+
+
